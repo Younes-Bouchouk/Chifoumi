@@ -1,0 +1,76 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    background: orange;
+    display: flex;
+    justify-content: center;
+}
+
+.game {
+    background: white;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    width: 800px;
+    height: 520px;
+    margin-top: 7%;
+}
+
+.arena {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 5%;
+    width: 80%;
+}
+
+.players {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+}
+
+#your, #his {
+    margin-top: 10px;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+i {
+    margin-top: 30px;
+    font-size: 100px;
+    color: black;
+}
+
+.score {
+    font-size: 35px;
+    font-weight: bold;
+    padding: 30px;
+    text-align: center;
+}
+
+#points {
+    display: flex;
+    justify-content: space-between;
+    width: 500px;
+    background-color: aqua;
+    padding: 20px;
+}
+
+button {
+    width: 200px;
+    height: 60px;
+    font-size: 25px;
+    margin: 1px;
+    /* background:orange; */
+    border: 2px solid black;
+    border-radius: 15px;
+}
