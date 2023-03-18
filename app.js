@@ -49,6 +49,7 @@ function battle(choiceIA){
 
     if (choice == choiceIA){
         score.innerText = 'Égalité'
+        s = 2
     }
 
     if (choice == 'rock'){
