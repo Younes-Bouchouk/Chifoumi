@@ -6,6 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="style.css">
+    <link rel = "icon" href = 
+    "https://media.istockphoto.com/id/1056840214/fr/vectoriel/roche-papier-ciseaux-illustration-vectorielle.jpg?s=612x612&w=0&k=20&c=kKVF_TifsAw6RPFf5shx1bInPzYc8mlc_T1yHBZSm3Q=" 
+        type = "image/x-icon">
     <title>Pierre Feuille Ciseaux</title>
 </head>
 <body>
@@ -16,30 +19,30 @@
 
             <div class="players" id="you">
                 <h1>Vous</h1>
+                <img id="yourImg" src="" alt="">
+            </div>
+
+            <div id="scores">
                 <p id="your">0</p>
-                <i id="img" class="fa-solid fa-question"></i>
+                <span>/</span>
+                <p id="his">0</p>
             </div>
 
             <div class="players" id="computer">
                 <h1>Ordinateur</h1>
-                <p id="his">0</p>
-                <i id="imgIA" class="fa-solid fa-question"></i>
+                <img id="IAImg" src="" alt="">
             </div>
 
         </div>
-
-        <!-- <i class="fa-regular fa-hand-back-fist"></i>
-        <i class="fa-regular fa-hand-scissors"></i>
-        <i class="fa-regular fa-hand"></i> -->
 
         <div class="score">
             <p id="score">Jouer !</p>
         </div>
 
         <div class="buttons">
-            <button id="rock" onclick="rock()">Pierre</button>
-            <button id="paper" onclick="paper()">Feuille</button>
-            <button id="scissors" onclick="scissors()">Ciseaux</button>
+            <button id="rock" onclick="yourChoice('rock')">Pierre</button>
+            <button id="paper" onclick="yourChoice('paper')">Feuille</button>
+            <button id="scissors" onclick="yourChoice('scissors')">Ciseaux</button>
         </div>
     </div>
     

@@ -1,85 +1,73 @@
-var choice
-var tab = ['rock','paper','scissors']
-var score = document.getElementById('score')
-var img = document.getElementById('img')
-var imgIA = document.getElementById('imgIA')
-var your_p = document.getElementById('your')
-var his_p = document.getElementById('his')
-var sy = 0
-var sh = 0
+let score = document.getElementById('score')
+let imgIA = document.getElementById('imgIA')
+let your_p = document.getElementById('your')
+let his_p = document.getElementById('his')
+let sy = 0
+let sh = 0
+let MyChoice = ''
+let IAChoice = ''
+var s = 0
 
-function rock(){
-    choice = 'rock'
-    img.className = "fa-regular fa-hand-back-fist"
-    IA()
+function yourChoice(choice) {
+    MyChoice = choice
+    console.log(MyChoice)
+
+    let img = document.getElementById('yourImg')
+    img.src = `./assets/${MyChoice}.png`
+
+    ChoiceIA()
 }
 
-function paper(){
-    choice = 'paper'
-    img.className = "fa-regular fa-hand"
-    IA()
-}
-
-function scissors(){
-    choice = 'scissors'
-    img.className = "fa-regular fa-hand-scissors"
-    IA()
-}
-
-function IA(){
-
-    var rand = Math.floor(Math.random()*tab.length);
-    var choiceIA = tab[rand];
-    console.log(choiceIA)
+function ChoiceIA(){
+    let tab = ['rock','paper','scissors']
+    let rand = Math.floor(Math.random()*tab.length);
+    IAChoice = tab[rand];
+    console.log(IAChoice)
     
-    if (choiceIA == 'rock'){
-        imgIA.className = "fa-regular fa-hand-back-fist"
-    }
-    if (choiceIA == 'paper'){
-        imgIA.className = "fa-regular fa-hand"
-    }
-    if (choiceIA == 'scissors'){
-        imgIA.className = "fa-regular fa-hand-scissors"
-    }
+    let imgIA = document.getElementById('IAImg')
+    imgIA.src = `./assets/${IAChoice}.png`
 
-    battle(choiceIA)
+    battle()
 }
 
-function battle(choiceIA){
 
-    if (choice == choiceIA){
+function battle(){
+    console.log("Moi :", MyChoice)
+    console.log("Adversaire :", IAChoice)
+
+    if (MyChoice == IAChoice){
         score.innerText = 'Égalité'
         s = 2
     }
 
-    if (choice == 'rock'){
-        if (choiceIA == 'paper'){
+    if (MyChoice == 'rock'){
+        if (IAChoice == 'paper'){
             score.innerText = 'Perdu !'
             s = 0
         }
-        if (choiceIA == 'scissors') {
+        if (IAChoice == 'scissors') {
             score.innerText = 'Gagné !'
             s = 1
         }
     }
 
-    if (choice == 'paper'){
-        if (choiceIA == 'scissors'){
+    if (MyChoice == 'paper'){
+        if (IAChoice == 'scissors'){
             score.innerText = 'Perdu !'
             s = 0
         }
-        if (choiceIA == 'rock') {
+        if (IAChoice == 'rock') {
             score.innerText = 'Gagné !'
             s = 1
         }
     }
 
-    if (choice == 'scissors'){
-        if (choiceIA == 'rock'){
+    if (MyChoice == 'scissors'){
+        if (IAChoice == 'rock'){
             score.innerText = 'Perdu !'
             s = 0
         }
-        if (choiceIA == 'paper') {
+        if (IAChoice == 'paper') {
             score.innerText = 'Gagné !'
             s = 1
         }
@@ -88,6 +76,8 @@ function battle(choiceIA){
 }
 
 function points(){
+
+    
     if (s == 1){
         sy += 1
         document.getElementById('your').innerHTML = sy
