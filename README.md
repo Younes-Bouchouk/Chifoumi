@@ -1,2 +1,2 @@
 https://younes-bouchouk.github.io/rock_paper_scissors/
-![Capture](https://user-images.githubusercontent.com/115986198/222858106-c519d868-c220-4135-bbdd-ff3be90f212a.PNG)
+![Capture](https://github.com/Younes-Bouchouk/rock_paper_scissors/assets/115986198/bb211d5d-7c2a-440b-ae92-24f36929e602)
