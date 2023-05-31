@@ -1,0 +1,50 @@
+/* Grossir le score à chaque tour */
+
+@keyframes scoreAnimation {
+    from {
+      transform: scale(1);
+    }
+    to {
+      transform: scale(4);
+    }
+}
+
+.animate {
+    animation-name: scoreAnimation;
+    animation-duration: 0.7s;
+    animation-timing-function: ease-in-out;
+}
+
+/* Rotation de la main du Joueur */
+
+@keyframes playerAnimation {
+    from {
+        transform: rotate(280deg) scaleX(-1);
+}
+    to {
+        transform: rotate(360deg) scaleX(-1);
+}
+}
+
+.playerHand {
+    animation-name: playerAnimation;
+    animation-duration: 0.3s;
+    animation-timing-function: ease-in-out;
+}
+
+/* Rotation de la main de l'Ordinateur */
+
+@keyframes computerAnimation {
+    from {
+        transform: rotate(80deg);
+}
+    to {
+        transform: rotate(0deg);
+}
+}
+
+.computerHand {
+    animation-name: computerAnimation;
+    animation-duration: 0.3s;
+    animation-timing-function: ease-in-out;
+}

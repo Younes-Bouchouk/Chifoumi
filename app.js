@@ -1,90 +1,103 @@
-let score = document.getElementById('score')
-let imgIA = document.getElementById('imgIA')
-let your_p = document.getElementById('your')
-let his_p = document.getElementById('his')
-let sy = 0
-let sh = 0
-let MyChoice = ''
-let IAChoice = ''
-var s = 0
+// Fonction pour générer le choix aléatoire de l'ordinateur
+function getRandomChoice() {
+    var choices = ['rock', 'paper', 'scissors'];
+    var randomIndex = Math.floor(Math.random() * 3);
 
-function yourChoice(choice) {
-    MyChoice = choice
-    console.log(MyChoice)
+    let imgComputer = document.getElementById('player')
+    imgComputer.src = `./assets/${randomIndex}.png`
 
-    let img = document.getElementById('yourImg')
-    img.src = `./assets/${MyChoice}.png`
+    return choices[randomIndex];
+}
+  
+// Fonction pour déterminer le gagnant
+function getWinner(playerChoice, computerChoice) {
 
-    ChoiceIA()
+    if (playerChoice === computerChoice) {
+      return 'Égalité';
+    } else if (
+      (playerChoice === 'rock' && computerChoice === 'scissors') ||
+      (playerChoice === 'paper' && computerChoice === 'rock') ||
+      (playerChoice === 'scissors' && computerChoice === 'paper')
+    ) {
+      return 'player';
+    } 
+    else {
+      return 'computer';
+    }
 }
 
-function ChoiceIA(){
-    let tab = ['rock','paper','scissors']
-    let rand = Math.floor(Math.random()*tab.length);
-    IAChoice = tab[rand];
-    console.log(IAChoice)
+// Fonction pour afficher le statut du tour (Gagné, Perdu ou Égalité)
+function showScore(result) {
+
+  var text = document.getElementById('text')
+  if (result === 'player') {
+    text.textContent = 'Gagné';
+  }
+
+  else if (result === 'computer') {
+    text.textContent = 'Perdu';
+  }
+
+  else {
+    text.textContent = 'Égalité';
+  }
+
+  text.classList.add('animate')
+} 
+
+// Fonction pour afficher les images
+function showImg(playerChoice, computerChoice) {
+
+  let imgPlayer = document.getElementById('player')
+  imgPlayer.src = `./assets/${playerChoice}.png`
+  document.getElementById('player').classList.add('playerHand');
+
+  let imgComputer = document.getElementById('computer')
+  imgComputer.src = `./assets/${computerChoice}.png`
+  document.getElementById('computer').classList.add('computerHand');
+
+}
+
+// Fonction pour lancer les animations
+function anim(result) {
+  if (result === 'player' || result === 'computer') {
+    wins[result] += 1;
+
+    document.getElementById(`points-${result}`).classList.add('animate');
+    document.getElementById(`points-${result}`).textContent = wins[result];
+
+    setTimeout(function() {
+      document.getElementById(`points-${result}`).classList.remove('animate');
+    }, 300);
+  }
+  setTimeout(function() {
+    document.getElementById('player').classList.remove('playerHand');
+    document.getElementById('computer').classList.remove('computerHand');
+    text.classList.remove('animate')
+  }, 300);
+}
+
+// Objet pour le nombre de victoire
+let wins = {
+  player: 0,
+  computer: 0
+};
+  
+// Fonction principale du jeu
+function playGame(playerChoice) {
+
+    var computerChoice = getRandomChoice();
+    var result = getWinner(playerChoice, computerChoice);
+
+    showImg(playerChoice, computerChoice)
+
+    showScore(result)
     
-    let imgIA = document.getElementById('IAImg')
-    imgIA.src = `./assets/${IAChoice}.png`
+    console.log('Le joueur a choisi : ' + playerChoice);
+    console.log('L\'ordinateur a choisi : ' + computerChoice);
+    console.log('Résultat : ' + result);
 
-    battle()
+    anim(result)
+
 }
-
-
-function battle(){
-    console.log("Moi :", MyChoice)
-    console.log("Adversaire :", IAChoice)
-
-    if (MyChoice == IAChoice){
-        score.innerText = 'Égalité'
-        s = 2
-    }
-
-    if (MyChoice == 'rock'){
-        if (IAChoice == 'paper'){
-            score.innerText = 'Perdu !'
-            s = 0
-        }
-        if (IAChoice == 'scissors') {
-            score.innerText = 'Gagné !'
-            s = 1
-        }
-    }
-
-    if (MyChoice == 'paper'){
-        if (IAChoice == 'scissors'){
-            score.innerText = 'Perdu !'
-            s = 0
-        }
-        if (IAChoice == 'rock') {
-            score.innerText = 'Gagné !'
-            s = 1
-        }
-    }
-
-    if (MyChoice == 'scissors'){
-        if (IAChoice == 'rock'){
-            score.innerText = 'Perdu !'
-            s = 0
-        }
-        if (IAChoice == 'paper') {
-            score.innerText = 'Gagné !'
-            s = 1
-        }
-    }
-    points()
-}
-
-function points(){
-
-    
-    if (s == 1){
-        sy += 1
-        document.getElementById('your').innerHTML = sy
-    }
-
-    if (s == 0){
-        sh += 1
-        document.getElementById('his').innerHTML = sh
-    }
-}
+  

@@ -1,0 +1,124 @@
+/* - Partie Score --------------------------------------- */
+
+#scores {
+    background-color: white;
+    color: black;
+    font-size: 20px;
+    font-weight: bolder;
+    margin-top: 10px;
+    display: flex;
+    justify-content: center;
+    box-shadow: 0px 0px 8px #82531f;
+}
+
+.profil {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    flex-direction: row-reverse;
+    height: 81px;
+}
+
+#profil-computer {
+    justify-content: start;
+    flex-direction: row;
+}
+
+#points {
+    border-bottom: 0 ;
+    font-size: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
+.points {
+    padding: 0 30px;
+    margin: 0;
+}
+
+
+.profil-logo {
+    width: 60px;
+    margin: 0 2%
+}
+
+.name {
+    margin: 0;
+    width: 185px;
+    text-align: center;
+}
+
+/* - Partie Boutons --------------------------------------- */
+
+#choices {
+    display: flex;
+    flex-direction: column;
+}
+
+button {
+    height: 200px;
+    background-color: yellowgreen;
+    color: white;
+    font-weight: bolder;
+    padding: 30px;
+    margin-right: 5px;
+    box-shadow: 0px 0px 10px #82531f;
+}
+
+button:nth-child(2) {
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+button:hover {
+    box-shadow: 2px 2px 5px #82531f;
+}
+
+.col-0, .col-8, .col-7, .col-6, .col-5, .col-4, .col-3, .col-2, .col-1, .col-sm-4 {
+    padding: 0;
+}
+
+
+/* - Partie Jeu --------------------------------------- */
+
+#game {
+    margin: 10px 0;
+}
+
+#arena {
+    background-color: white;
+    box-shadow: 0px 0px 8px #82531f;
+    padding: 0;
+}
+
+.row {
+    margin: 0;
+}
+
+.hands {
+    margin-top: 10%;
+}
+
+#hand-computer {
+    display: flex;
+    justify-content: end;
+}
+
+.img {
+    height: 200px;
+}
+
+#player {
+    transform: scaleX(-1);
+}
+
+
+#text {
+    font-size: 30px;
+    text-align: center;
+    font-weight: bolder;
+    margin-top: 1em;
+
+}
