@@ -100,4 +100,23 @@ function playGame(playerChoice) {
     anim(result)
 
 }
+
+function change() {
+  var pseudo = document.getElementById('pseudo').value
+
+  console.log(pseudo.length)
+  if (pseudo.length >= 16) {
+    return alert('Votre pseudo est trop long (15 max)')
+  }
+  document.getElementById('name-player').innerHTML = pseudo
+}
+
+function reset(wins) {
+  wins['player'] = 0
+  document.getElementById('points-player').textContent = wins['player']
+  // console.log(wins[player])
+
+  wins['computer'] = 0
+  document.getElementById('points-computer').textContent = wins['computer']
+}
   

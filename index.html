@@ -16,9 +16,13 @@
 </head>
 <body>
 
-    <header>
-        <img id="logo" src="assets/logo.png" alt="logo">
-        <img id="title" src="assets/title.png" alt="">
+    <header class="row">
+        <img id="logo" class="col-2 col-lg-2" src="assets/logo.png" alt="logo">
+        <img id="title" class="col-8 col-lg-3" src="assets/title.png" alt="">
+        <div id="change-pseudo" class="row col-12 col-lg-7">
+            <input id="pseudo" class="col-6 col-lg-5" type="text" placeholder="Nom d'utilisateur">
+            <button id="change" class="col-6 col-lg-3" onclick="change()" >Appliquer</button>
+        </div>    
     </header>
 
     <div class="container-fluid">
@@ -47,6 +51,14 @@
                     <p class="name" id="name-computer">Computer</p>
                 </div>
             </div>
+
+            <div class="col-0 col-lg-2"></div>
+            <div class="reset col-10">
+                <button id="btn-reset" onclick="reset(wins)">
+                    <img id="reset" src="assets/reset.png" alt="">
+                </button>
+            </div>
+
         </div>
 
     </div>
