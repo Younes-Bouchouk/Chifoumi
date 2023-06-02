@@ -114,7 +114,6 @@ function change() {
 function reset(wins) {
   wins['player'] = 0
   document.getElementById('points-player').textContent = wins['player']
-  // console.log(wins[player])
 
   wins['computer'] = 0
   document.getElementById('points-computer').textContent = wins['computer']
